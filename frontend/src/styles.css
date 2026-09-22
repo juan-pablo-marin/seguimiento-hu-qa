@@ -205,10 +205,10 @@ body {
 }
 .tabla-cabecera, .hu-fila {
   display: grid;
-  grid-template-columns: 2.5fr 1.3fr 2fr 1.4fr;
+  grid-template-columns: minmax(0, 4.8fr) minmax(120px, 1fr) minmax(80px, 0.9fr) minmax(200px, auto);
   align-items: center;
-  gap: 12px;
-  padding: 12px 18px;
+  gap: 10px;
+  padding: 10px 14px;
 }
 .tabla-cabecera {
   background: var(--bg-2);
@@ -265,9 +265,37 @@ body {
 .hu-fila {
   border-top: 1px solid #263449;
   font-size: 0.9rem;
+  min-height: 52px;
 }
 .hu-fila:hover { background: var(--card-2); }
-.col-acciones { display: flex; gap: 6px; justify-content: flex-end; }
+.col-nombre {
+  min-width: 0;
+  overflow: hidden;
+}
+.col-obs {
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.col-estado {
+  display: flex;
+  justify-content: flex-start;
+}
+.col-acciones {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 200px;
+  flex-wrap: wrap;
+}
+.col-acciones .btn,
+.nodo-acciones .btn {
+  padding: 5px 10px;
+  font-size: 0.78rem;
+}
 .vacio-hu { padding: 12px 18px; font-style: italic; }
 .vacio { padding: 24px; text-align: center; }
 
@@ -276,11 +304,12 @@ body {
   padding: 5px 8px;
   border-radius: 6px;
   border: 1px solid var(--borde);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   background: var(--card-2);
   color: var(--texto);
+  min-width: 110px;
 }
 .estado-pendiente { background: #3a1a1a; color: #fca5a5; border-color: #7f1d1d; }
 .estado-en_progreso { background: #3a2e12; color: #fcd34d; border-color: #92680f; }
